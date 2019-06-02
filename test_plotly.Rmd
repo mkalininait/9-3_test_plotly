@@ -1,0 +1,15 @@
+---
+title: "Test Plotly"
+author: "Maria Ronacher"
+date: "6/3/2019"
+output: ioslides_presentation
+---
+
+## mtcars dataset
+
+```{r echo=FALSE, message=FALSE}
+library(plotly)
+mtcars$am <- factor(mtcars$am)
+mtcars %>% plot_ly(x = ~hp, y = ~mpg, color = ~am, colors = "Set1") %>%
+        layout(title = "mpg vs hp for manual and auto transmissions")
+```
